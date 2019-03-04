@@ -1,6 +1,5 @@
 package com.aqacourses.serenity.steps;
 
-import com.aqacourses.serenity.pages.CategoriesBreadcrumb;
 import com.aqacourses.serenity.pages.ProductPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
@@ -15,6 +14,8 @@ public class ProductPageSTeps extends ScenarioSteps implements Serializable {
 
 
     private static final long serialVersionUID = 4475642995121447167L;
+
+    private String breadcrumb;
 
     /**
      * Constructor
@@ -34,24 +35,13 @@ public class ProductPageSTeps extends ScenarioSteps implements Serializable {
         return pages().get(ProductPage.class);
     }
 
-    /**
-     * Click to product
-     */
-    String breadCrumbsForProductPage =
-            CategoriesBreadcrumb.WOMEN.getName()
-                    + ' '
-                    + CategoriesBreadcrumb.TOPS.getName()
-                    + ' '
-                    + CategoriesBreadcrumb.TSHIRTS.getName()
-                    + ' '
-                    + CategoriesBreadcrumb.FADEDSHORTSLEEVETSHIRTS.getName();
 
     /**
      * Check breadcrumb
      */
     @Step("Check breadcrumb")
-    public void onProductPageAndCheckBreadcrumb() {
-        onProductPage().checkBreadrumb(breadCrumbsForProductPage);
+    public void onProductPageAndCheckBreadcrumb(String breadcrumb) {
+        onProductPage().checkBreadrumb(breadcrumb);
     }
 
     /**

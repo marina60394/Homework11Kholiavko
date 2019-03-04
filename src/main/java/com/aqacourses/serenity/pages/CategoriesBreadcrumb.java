@@ -9,8 +9,7 @@ public enum CategoriesBreadcrumb {
     WOMEN("Women"),
     DRESSES("Dresses"),
     TOPS("Tops"),
-    TSHIRTS("T-shirts"),
-    FADEDSHORTSLEEVETSHIRTS("Faded Short Sleeve T-shirts");
+    TSHIRTS("T-shirts");
 
     private String name;
 

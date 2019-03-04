@@ -9,8 +9,6 @@ import org.openqa.selenium.support.FindBy;
  */
 public class ProductPage extends AbstractPage {
 
-    String expectedBreadCrumb = "Women>Tops>T-shirts>Faded Short Sleeve T-shirts";
-
     //  Web elements
     @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
     private WebElement breadcrumb;

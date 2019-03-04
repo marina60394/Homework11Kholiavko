@@ -1,5 +1,6 @@
 package com.aqacourses.serenity.tests;
 
+import com.aqacourses.serenity.pages.CategoriesBreadcrumb;
 import com.aqacourses.serenity.steps.*;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -17,6 +18,8 @@ import org.openqa.selenium.WebDriver;
 // Serenity Runner
 @RunWith(SerenityRunner.class)
 public class AddtoCartTest {
+
+    private static final String FADED_SHORT_SLEEVE_TSHIRTS = "Faded Short Sleeve T-shirts";
 
     @Managed
     WebDriver driver;
@@ -49,7 +52,14 @@ public class AddtoCartTest {
         loginPageSteps.UserOpensLoginPageAndSignIn();
         myAccountPageSteps.UserClicksToTShirtsMenu();
         tShirtPageSteps.userClicksToProduct();
-        productPageSTeps.onProductPageAndCheckBreadcrumb();
+        productPageSTeps.onProductPageAndCheckBreadcrumb(
+                CategoriesBreadcrumb.WOMEN.getName()
+                        + ' '
+                        + CategoriesBreadcrumb.TOPS.getName()
+                        + ' '
+                        + CategoriesBreadcrumb.TSHIRTS.getName()
+                        + ' '
+                        + FADED_SHORT_SLEEVE_TSHIRTS);
         productPageSTeps.userClicksToButtonAddToCart();
         productPageSTeps.userClicksToButtonProceedCheckout();
         checkoutPageSteps.onCheckoutPageUserClicksToIncreaseQuantity();

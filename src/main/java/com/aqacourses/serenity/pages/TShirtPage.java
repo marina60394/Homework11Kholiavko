@@ -1,9 +1,7 @@
 package com.aqacourses.serenity.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 
 /**
  * Created by Marina on 26.02.2019.
@@ -21,12 +19,9 @@ public class TShirtPage extends AbstractPage {
 
     public String pageBreadcrumb;
 
-    // Web Elements
-    @FindBy(
-            xpath =
-                    "//div[@class='product-container']/div[@class='right-block']/h5[@itemprop='name']/a[@title='Faded Short Sleeve T-shirts']"
-    )
-    private WebElement productContainer;
+    private String PRODUCT_DETAILS =
+            "//div[@class='product-container']/div[@class='right-block']/h5[@itemprop='name']/a[@title='%s']";
+    private String productName = "Faded Short Sleeve T-shirts";
 
     /**
      * Click to Product Page
@@ -34,8 +29,8 @@ public class TShirtPage extends AbstractPage {
      * @return new instance of Product page
      */
     public void clicktoProduct() {
-        Actions action = new Actions(getDriver());
-        action.moveToElement(productContainer).perform();
-        buttonViewForProduct.click();
+        getDriver()
+                .findElement(By.xpath(String.format(PRODUCT_DETAILS, productName)))
+                .click();
     }
 }
