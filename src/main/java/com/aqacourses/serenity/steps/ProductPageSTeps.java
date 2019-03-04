@@ -35,7 +35,7 @@ public class ProductPageSTeps extends ScenarioSteps implements Serializable {
     }
 
     /**
-     * CLick to product
+     * Click to product
      */
     String breadCrumbsForProductPage =
             CategoriesBreadcrumb.WOMEN.getName()
@@ -46,16 +46,25 @@ public class ProductPageSTeps extends ScenarioSteps implements Serializable {
                     + ' '
                     + CategoriesBreadcrumb.FADEDSHORTSLEEVETSHIRTS.getName();
 
+    /**
+     * Check breadcrumb
+     */
     @Step("Check breadcrumb")
-    public void checkBreadcrumb() {
+    public void onProductPageAndCheckBreadcrumb() {
         onProductPage().checkBreadrumb(breadCrumbsForProductPage);
     }
 
+    /**
+     * Click to button Add to Cart
+     */
     @Step("User clicks to Button Add to Cart")
     public void userClicksToButtonAddToCart() {
         onProductPage().clickToButtonAddToCart();
     }
 
+    /**
+     * Click to button Proceed to checkout
+     */
     @Step("User clicks to Button Proceed Checkout")
     public void userClicksToButtonProceedCheckout() {
         onProductPage().clickButtonProceedToCheckout();

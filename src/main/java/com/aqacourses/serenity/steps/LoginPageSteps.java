@@ -36,8 +36,8 @@ public class LoginPageSteps extends ScenarioSteps implements Serializable {
     /**
      * Click Sign In
      */
-    @Step("User opens Login Page and makes sign in")
-    public void isUserOpensLoginPageAndMakesSignIn() {
+    @Step("User opens Login Page and sign in")
+    public void UserOpensLoginPageAndSignIn() {
         onLoginPage().signIn();
     }
 

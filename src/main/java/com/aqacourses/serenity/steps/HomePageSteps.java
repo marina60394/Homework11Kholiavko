@@ -50,10 +50,4 @@ public class HomePageSteps extends ScenarioSteps implements Serializable {
         onHomePage().clickSignInLink();
     }
 
-    @StepGroup
-    public void openSiteAndClickSignInLink() {
-        userOpensSiteAndGetsHomePage();
-        onHomePageUserClicksSignInLinksGetLoginPage();
-    }
-
 }

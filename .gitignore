@@ -13,3 +13,4 @@ gradle
 /history/
 /.idea/
 /target/
+/build/

@@ -1,7 +1,6 @@
 package com.aqacourses.serenity.steps;
 
 import com.aqacourses.serenity.pages.CheckoutPage;
-import com.aqacourses.serenity.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -39,23 +38,23 @@ public class CheckoutPageSteps extends ScenarioSteps implements Serializable {
      * Click to increase quantity
      */
     @Step("User clicks to increase quantity")
-    public void userClicksTOIncreaseQuantity() {
+    public void onCheckoutPageUserClicksToIncreaseQuantity() {
         onCheckoutPage().clickToIncreaseQuantity();
     }
 
     /**
      * Check Total Price
      */
-    @Step("User clicks to increase quantity and check total Price")
-    public void userClickToIncreaseQuantityAndCheckTotalPrice() {
+    @Step("On Checkout Page user checks total Price")
+    public void onCheckoutPageUserCheckTotalPrice() {
         onCheckoutPage().checkTotalPrice();
     }
 
     /**
      * Delete Product
      */
-    @Step("User increase quantity and clicks deletes products")
-    public void userIncreaseQuantityAndClicksDeleteProducts() {
+    @Step("User deletes products")
+    public void OnCheckoutPageUserClicksDeleteProducts() {
         onCheckoutPage().clickDeleteProduct();
     }
 

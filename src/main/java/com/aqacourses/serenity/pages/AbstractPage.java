@@ -4,11 +4,9 @@ package com.aqacourses.serenity.pages;
 import com.aqacourses.serenity.utils.YamlParser;
 import net.thucydides.core.pages.PageObject;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Marina on 03.03.2019.
@@ -38,9 +36,6 @@ public class AbstractPage extends PageObject {
     )
     private WebElement menuTShirts;
 
-    @FindBy(xpath = "//div[@class='product-container']")
-    private WebElement productCOntainer;
-
     @FindBy(xpath = "//div[@class='button-container']/a[@title='View']")
     WebElement buttonViewForProduct;
 
@@ -56,6 +51,9 @@ public class AbstractPage extends PageObject {
         super(driver);
     }
 
+    /**
+     * Open Site
+     */
     public void openSite() {
         getDriver().manage().window().maximize();
         getDriver().get(YamlParser.getYamlData().getUrl());

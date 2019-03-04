@@ -26,7 +26,7 @@ public class TShirtPage extends AbstractPage {
             xpath =
                     "//div[@class='product-container']/div[@class='right-block']/h5[@itemprop='name']/a[@title='Faded Short Sleeve T-shirts']"
     )
-    private WebElement productCOntainer;
+    private WebElement productContainer;
 
     /**
      * Click to Product Page
@@ -35,7 +35,7 @@ public class TShirtPage extends AbstractPage {
      */
     public void clicktoProduct() {
         Actions action = new Actions(getDriver());
-        action.moveToElement(productCOntainer).perform();
+        action.moveToElement(productContainer).perform();
         buttonViewForProduct.click();
     }
 }

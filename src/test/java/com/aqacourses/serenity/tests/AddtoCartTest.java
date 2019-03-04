@@ -46,15 +46,15 @@ public class AddtoCartTest {
     public void testAddToCart() {
         homePageSteps.userOpensSiteAndGetsHomePage();
         homePageSteps.onHomePageUserClicksSignInLinksGetLoginPage();
-        loginPageSteps.isUserOpensLoginPageAndMakesSignIn();
+        loginPageSteps.UserOpensLoginPageAndSignIn();
         myAccountPageSteps.UserClicksToTShirtsMenu();
         tShirtPageSteps.userClicksToProduct();
-        productPageSTeps.checkBreadcrumb();
+        productPageSTeps.onProductPageAndCheckBreadcrumb();
         productPageSTeps.userClicksToButtonAddToCart();
         productPageSTeps.userClicksToButtonProceedCheckout();
-        checkoutPageSteps.userClicksTOIncreaseQuantity();
-        checkoutPageSteps.userClickToIncreaseQuantityAndCheckTotalPrice();
-        checkoutPageSteps.userIncreaseQuantityAndClicksDeleteProducts();
+        checkoutPageSteps.onCheckoutPageUserClicksToIncreaseQuantity();
+        checkoutPageSteps.onCheckoutPageUserCheckTotalPrice();
+        checkoutPageSteps.OnCheckoutPageUserClicksDeleteProducts();
         checkoutPageSteps.onCheckoutPageCheckEmptyCart();
 
     }

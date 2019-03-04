@@ -1,14 +1,12 @@
 package com.aqacourses.serenity.pages;
 
 
-import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by Marina on 27.02.2019.
@@ -19,8 +17,6 @@ public class CheckoutPage extends AbstractPage {
             "//td[@class='cart_quantity text-center']/input[@type='hidden']";
     private static final String MESSAGE_EMPTY_SHOPPING_CART = "Your shopping cart is empty.";
     private static final double DELTA = 1e-15;
-
-    private WebDriver wait;
 
     //   Web Elements
     @FindBy(xpath = "//i[@class='icon-plus']")
@@ -64,7 +60,6 @@ public class CheckoutPage extends AbstractPage {
         int expectedQuanttity = currentQuantityInt + 1;
 
         waitFor(ExpectedConditions.textToBePresentInElementValue(By.xpath(PRODUCT_QUANTITY), String.valueOf(expectedQuanttity)));
-
     }
 
     /**
@@ -73,8 +68,8 @@ public class CheckoutPage extends AbstractPage {
     public void clickToIncreaseQuantity() {
 
         iconIncreaseQuantity.click();
-        waitIncreaseElementValue();
 
+        waitIncreaseElementValue();
     }
 
     /**
