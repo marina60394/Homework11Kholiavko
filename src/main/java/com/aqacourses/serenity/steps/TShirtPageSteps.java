@@ -37,8 +37,8 @@ public class TShirtPageSteps extends ScenarioSteps implements Serializable {
      * CLick to product
      */
     @Step("User clicks to product")
-    public void userClicksToProduct() {
-        onTShirtPage().clicktoProduct();
+    public void userClicksToProduct(String productName) {
+        onTShirtPage().clicktoProduct(productName);
     }
 
 

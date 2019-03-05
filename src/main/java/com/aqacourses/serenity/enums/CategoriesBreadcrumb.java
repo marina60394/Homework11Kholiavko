@@ -1,4 +1,4 @@
-package com.aqacourses.serenity.pages;
+package com.aqacourses.serenity.enums;
 
 /**
  * Created by Marina on 03.03.2019.

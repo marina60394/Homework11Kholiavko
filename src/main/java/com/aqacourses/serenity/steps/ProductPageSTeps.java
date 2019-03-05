@@ -15,7 +15,6 @@ public class ProductPageSTeps extends ScenarioSteps implements Serializable {
 
     private static final long serialVersionUID = 4475642995121447167L;
 
-    private String breadcrumb;
 
     /**
      * Constructor
