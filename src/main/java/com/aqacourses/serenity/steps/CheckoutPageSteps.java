@@ -5,13 +5,11 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import java.io.Serializable;
-
 
 /**
  * Created by Marina on 03.03.2019.
  */
-public class CheckoutPageSteps extends ScenarioSteps implements Serializable {
+public class CheckoutPageSteps extends ScenarioSteps {
 
     private static final long serialVersionUID = 8370993422625525653L;
 
@@ -54,7 +52,7 @@ public class CheckoutPageSteps extends ScenarioSteps implements Serializable {
      * Delete Product
      */
     @Step("User deletes products")
-    public void OnCheckoutPageUserClicksDeleteProducts() {
+    public void onCheckoutPageUserClicksDeleteProducts() {
         onCheckoutPage().clickDeleteProduct();
     }
 

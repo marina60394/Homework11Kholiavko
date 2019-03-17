@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Marina on 03.03.2019.
@@ -17,9 +18,6 @@ public class AbstractPage extends PageObject {
     // Web Elements
     @FindBy(xpath = "//a[@class='login']")
     private WebElement signInLink;
-
-    @FindBy(xpath = "//div[@id='page']")
-    protected WebElement divPage;
 
     @FindBy(xpath = "//div[@class='header_user_info']/a[@class='logout']")
     private WebElement logOut;
@@ -60,6 +58,7 @@ public class AbstractPage extends PageObject {
      * Click on Sign In link
      */
     public void clickSignInLink() {
+        waitFor(ExpectedConditions.visibilityOf(signInLink));
         signInLink.click();
     }
 
@@ -74,24 +73,12 @@ public class AbstractPage extends PageObject {
         return currentPageURL;
     }
 
-    /**
-     * Click Log Out
-     */
-    public void logOut() {
-        logOut.click();
-    }
-
-    /**
-     * Click to menu Dresses
-     */
-    public void clickMenuDresses() {
-        menuDresses.click();
-    }
 
     /**
      * Click to menu T-shirt
      */
     public void clickMenuTShirt() {
+        waitFor(ExpectedConditions.visibilityOf(menuTShirts));
         menuTShirts.click();
     }
 
@@ -101,6 +88,7 @@ public class AbstractPage extends PageObject {
      * @param expectedBreadcrumbs
      */
     public void checkBreadrumb(String expectedBreadcrumbs) {
+        waitFor(ExpectedConditions.visibilityOf(breadcrumb));
         String breadcrumbs = breadcrumb.getAttribute("innerText");
 
         String actualBreadCrumbs = breadcrumbs.replace(" > ", "").replace(">", " ");

@@ -3,6 +3,7 @@ package com.aqacourses.serenity.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Marina on 26.02.2019.
@@ -32,6 +33,7 @@ public class ProductPage extends AbstractPage {
      * Click to button Add to Cart
      */
     public void clickToButtonAddToCart() {
+        waitFor(ExpectedConditions.visibilityOf(buttonAddToCart));
         buttonAddToCart.click();
     }
 
@@ -39,6 +41,7 @@ public class ProductPage extends AbstractPage {
      * Click to button Proceed Checkout
      */
     public void clickButtonProceedToCheckout() {
+        waitFor(ExpectedConditions.visibilityOf(buttonProceedToCheckout));
         buttonProceedToCheckout.click();
     }
 }

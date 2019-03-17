@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Marina on 19.02.2019.
@@ -27,6 +29,7 @@ public class MyAccoutPage extends AbstractPage {
      * Check that customer name is correct
      */
     public void checkCustomerName() {
+        waitFor(ExpectedConditions.visibilityOf(customerAccount));
         Assert.assertEquals("Maryna Test", customerAccount.getText());
     }
 }

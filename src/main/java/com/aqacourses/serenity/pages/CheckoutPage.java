@@ -52,21 +52,22 @@ public class CheckoutPage extends AbstractPage {
      * Wait for increase quantity of products
      */
     public void waitIncreaseElementValue() {
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(PRODUCT_QUANTITY)));
         String currentQuantity =
                 getDriver().findElement(By.xpath(PRODUCT_QUANTITY)).getAttribute("value");
 
         int currentQuantityInt = Integer.parseInt(currentQuantity);
 
-        int expectedQuanttity = currentQuantityInt + 1;
+        int expectedQuantity = currentQuantityInt + 1;
 
-        waitFor(ExpectedConditions.textToBePresentInElementValue(By.xpath(PRODUCT_QUANTITY), String.valueOf(expectedQuanttity)));
+        waitFor(ExpectedConditions.textToBePresentInElementValue(By.xpath(PRODUCT_QUANTITY), String.valueOf(expectedQuantity)));
     }
 
     /**
      * increase quantity of products
      */
     public void clickToIncreaseQuantity() {
-
+        waitFor(ExpectedConditions.visibilityOf(iconIncreaseQuantity));
         iconIncreaseQuantity.click();
 
         waitIncreaseElementValue();
@@ -76,6 +77,8 @@ public class CheckoutPage extends AbstractPage {
      * check total price is the same productPrice*quantity
      */
     public void checkTotalPrice() {
+        waitFor(ExpectedConditions.visibilityOf(productPrice));
+        waitFor(ExpectedConditions.visibilityOf(totalPrice));
         // get product price
         String productPriceText = productPrice.getText().substring(1);
 
@@ -102,6 +105,7 @@ public class CheckoutPage extends AbstractPage {
      * Click Delete Product
      */
     public void clickDeleteProduct() {
+        waitFor(ExpectedConditions.visibilityOf(deleteProduct));
         deleteProduct.click();
     }
 
@@ -109,7 +113,6 @@ public class CheckoutPage extends AbstractPage {
      * Check Empty Cart
      */
     public void checkEmptyCart() {
-
         waitFor(ExpectedConditions.visibilityOf(messageEmptyCart));
 
         // check message for empty cart

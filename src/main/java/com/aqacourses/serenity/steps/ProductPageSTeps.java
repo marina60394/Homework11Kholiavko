@@ -5,12 +5,10 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import java.io.Serializable;
-
 /**
  * Created by Marina on 03.03.2019.
  */
-public class ProductPageSTeps extends ScenarioSteps implements Serializable {
+public class ProductPageSTeps extends ScenarioSteps {
 
 
     private static final long serialVersionUID = 4475642995121447167L;

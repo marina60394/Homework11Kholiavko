@@ -5,12 +5,10 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import java.io.Serializable;
-
 /**
  * Created by Marina on 03.03.2019.
  */
-public class LoginPageSteps extends ScenarioSteps implements Serializable {
+public class LoginPageSteps extends ScenarioSteps {
 
 
     private static final long serialVersionUID = -1998906195788543570L;
@@ -37,7 +35,7 @@ public class LoginPageSteps extends ScenarioSteps implements Serializable {
      * Click Sign In
      */
     @Step("User opens Login Page and sign in")
-    public void UserOpensLoginPageAndSignIn() {
+    public void userOpensLoginPageAndSignIn() {
         onLoginPage().signIn();
     }
 

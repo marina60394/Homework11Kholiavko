@@ -4,6 +4,7 @@ import com.aqacourses.serenity.utils.YamlParser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Marina on 19.02.2019.
@@ -39,6 +40,9 @@ public class LoginPage extends AbstractPage {
      * Enter login and password and click to Submit Button
      */
     public void signIn() {
+        waitFor(ExpectedConditions.visibilityOf(fieldLogin));
+        waitFor(ExpectedConditions.visibilityOf(fieldPassword));
+        waitFor(ExpectedConditions.visibilityOf(submitButton));
         fieldLogin.sendKeys(YamlParser.getYamlData().getEmail());
         fieldPassword.sendKeys(YamlParser.getYamlData().getPassword());
         submitButton.click();

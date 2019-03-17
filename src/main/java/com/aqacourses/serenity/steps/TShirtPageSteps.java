@@ -5,12 +5,10 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import java.io.Serializable;
-
 /**
  * Created by Marina on 03.03.2019.
  */
-public class TShirtPageSteps extends ScenarioSteps implements Serializable {
+public class TShirtPageSteps extends ScenarioSteps {
 
 
     private static final long serialVersionUID = -4305443090237528873L;
@@ -38,7 +36,7 @@ public class TShirtPageSteps extends ScenarioSteps implements Serializable {
      */
     @Step("User clicks to product")
     public void userClicksToProduct(String productName) {
-        onTShirtPage().clicktoProduct(productName);
+        onTShirtPage().clickToProduct(productName);
     }
 
 

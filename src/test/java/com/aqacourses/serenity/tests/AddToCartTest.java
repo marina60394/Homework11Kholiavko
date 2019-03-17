@@ -17,11 +17,9 @@ import org.openqa.selenium.WebDriver;
 
 // Serenity Runner
 @RunWith(SerenityRunner.class)
-public class AddtoCartTest {
+public class AddToCartTest {
 
     private static final String FADED_SHORT_SLEEVE_TSHIRTS = "Faded Short Sleeve T-shirts";
-
-    private static final String PRODUCT_NAME = "Faded Short Sleeve T-shirts";
 
     @Managed
     WebDriver driver;
@@ -51,9 +49,9 @@ public class AddtoCartTest {
     public void testAddToCart() {
         homePageSteps.userOpensSiteAndGetsHomePage();
         homePageSteps.onHomePageUserClicksSignInLinksGetLoginPage();
-        loginPageSteps.UserOpensLoginPageAndSignIn();
-        myAccountPageSteps.UserClicksToTShirtsMenu();
-        tShirtPageSteps.userClicksToProduct(PRODUCT_NAME);
+        loginPageSteps.userOpensLoginPageAndSignIn();
+        myAccountPageSteps.userClicksToTShirtsMenu();
+        tShirtPageSteps.userClicksToProduct(FADED_SHORT_SLEEVE_TSHIRTS);
         productPageSTeps.onProductPageAndCheckBreadcrumb(
                 CategoriesBreadcrumb.WOMEN.getName()
                         + ' '
@@ -66,7 +64,7 @@ public class AddtoCartTest {
         productPageSTeps.userClicksToButtonProceedCheckout();
         checkoutPageSteps.onCheckoutPageUserClicksToIncreaseQuantity();
         checkoutPageSteps.onCheckoutPageUserCheckTotalPrice();
-        checkoutPageSteps.OnCheckoutPageUserClicksDeleteProducts();
+        checkoutPageSteps.onCheckoutPageUserClicksDeleteProducts();
         checkoutPageSteps.onCheckoutPageCheckEmptyCart();
 
     }
