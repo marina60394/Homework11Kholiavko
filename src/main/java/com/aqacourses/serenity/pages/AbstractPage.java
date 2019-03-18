@@ -19,15 +19,6 @@ public class AbstractPage extends PageObject {
     @FindBy(xpath = "//a[@class='login']")
     private WebElement signInLink;
 
-    @FindBy(xpath = "//div[@class='header_user_info']/a[@class='logout']")
-    private WebElement logOut;
-
-    @FindBy(
-            xpath =
-                    "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li/a[@title='Dresses']"
-    )
-    private WebElement menuDresses;
-
     @FindBy(
             xpath =
                     "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li/a[@title='T-shirts']"

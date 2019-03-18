@@ -43,6 +43,7 @@ public class LoginPage extends AbstractPage {
         waitFor(ExpectedConditions.visibilityOf(fieldLogin));
         waitFor(ExpectedConditions.visibilityOf(fieldPassword));
         waitFor(ExpectedConditions.visibilityOf(submitButton));
+
         fieldLogin.sendKeys(YamlParser.getYamlData().getEmail());
         fieldPassword.sendKeys(YamlParser.getYamlData().getPassword());
         submitButton.click();
